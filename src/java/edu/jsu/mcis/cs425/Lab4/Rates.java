@@ -116,6 +116,13 @@ public class Rates {
              *
              * *** INSERT YOUR CODE HERE ***
              */
+            row = iterator.next();
+            while(iterator.hasNext()){
+                String code = row[1];
+                double r = Double.parseDouble(row[2]);
+                rates.put(code,r);
+                
+            }
             
             json.put("rates", rates);
             

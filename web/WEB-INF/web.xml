@@ -4,9 +4,33 @@
         <servlet-name>Test</servlet-name>
         <servlet-class>edu.jsu.mcis.cs425.Lab4.Test</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>latest</servlet-name>
+        <servlet-class>edu.jsu.mcis.cs425.Lab4.latest</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>edu.jsu.mcis.cs425.Lab4.NewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Latest</servlet-name>
+        <servlet-class>edu.jsu.mcis.cs425.Lab4.Latest</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Test</servlet-name>
         <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>latest</servlet-name>
+        <url-pattern>/latest</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Latest</servlet-name>
+        <url-pattern>/Latest</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

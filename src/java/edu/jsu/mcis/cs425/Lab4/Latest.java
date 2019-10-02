@@ -1,3 +1,4 @@
+
 package edu.jsu.mcis.cs425.Lab4;
 
 import java.io.File;
@@ -9,35 +10,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "Test", urlPatterns = {"/test"})
-public class Test extends HttpServlet {
+@WebServlet(name = "latest", urlPatterns = {"/latest"})
+public class Latest extends HttpServlet {
 
-    @Override
+    
+   @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/json;charset=UTF-8");
         
         String path = getServletContext().getRealPath(File.separator + Rates.RATE_FILENAME);
         
-        try (PrintWriter out = response.getWriter()) {
-            
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Test</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Test at " + request.getContextPath() + "</h1>");
+        PrintWriter out;        
+        try {            
+            out = response.getWriter();                    
             out.println( Rates.getRatesAsTable( Rates.getRates(path) ) );
-            out.println("</body>");
-            out.println("</html>");
-            
-        }
+        } 
+        
+        catch (Exception e) {} 
         
     }
 
-    @Override
+  
+   @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
@@ -48,7 +44,7 @@ public class Test extends HttpServlet {
     @Override
     public String getServletInfo() {
         
-        return "Lab #4 Test Servlet";
+        return "Lab #4 Latest Servlet";
         
     }
 

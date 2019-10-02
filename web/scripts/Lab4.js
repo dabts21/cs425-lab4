@@ -17,6 +17,9 @@ var Lab4 = ( function() {
              */
 
             // INSERT YOUR CODE HERE
+            
+            var output = "<p>";
+            var ratelist = rates["rates"];
 
         },
         
