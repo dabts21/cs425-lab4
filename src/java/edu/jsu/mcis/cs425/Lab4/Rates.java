@@ -118,6 +118,7 @@ public class Rates {
              */
             row = iterator.next();
             while(iterator.hasNext()){
+                row = iterator.next();
                 String code = row[1];
                 double r = Double.parseDouble(row[2]);
                 rates.put(code,r);

@@ -25,7 +25,8 @@ public class Latest extends HttpServlet {
         PrintWriter out;        
         try {            
             out = response.getWriter();                    
-            out.println( Rates.getRatesAsTable( Rates.getRates(path) ) );
+            out.println( Rates.getRatesAsJson( Rates.getRates(path) ) );
+            
         } 
         
         catch (Exception e) {} 
