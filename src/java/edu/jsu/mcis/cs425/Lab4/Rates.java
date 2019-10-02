@@ -126,7 +126,6 @@ public class Rates {
             }
             
             json.put("rates", rates);
-            
             /* Parse top-level container to a JSON string */
             
             results = JSONValue.toJSONString(json);

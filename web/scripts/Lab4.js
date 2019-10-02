@@ -20,6 +20,12 @@ var Lab4 = ( function() {
             
             var output = "<p>";
             var ratelist = rates["rates"];
+            
+            var input = document.getElementById("input");
+            
+            for(var i = 0; i < ratelist.length; ++i){
+                
+            }
 
         },
         
