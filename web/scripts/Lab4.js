@@ -25,6 +25,11 @@ var Lab4 = ( function() {
             
             for(var i = 0; i < ratelist.length; ++i){
                 
+                var solution = rates[i] * input;
+                
+                
+                output.innerHTML = (rates[i] + " " + solution);
+                output.appendChild(output);
             }
 
         },
