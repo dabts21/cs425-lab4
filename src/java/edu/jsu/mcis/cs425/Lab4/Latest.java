@@ -22,12 +22,9 @@ public class Latest extends HttpServlet {
         
         String path = getServletContext().getRealPath(File.separator + Rates.RATE_FILENAME);
         
-        PrintWriter out;        
-        try {            
-            out = response.getWriter();                    
-            out.println( Rates.getRatesAsJson( Rates.getRates(path) ) );
-            
-        } 
+        try (PrintWriter out = response.getWriter()) { 
+            out.println(Rates.getRatesAsJson(Rates.getRates(path)));
+        }
         
         catch (Exception e) {} 
         

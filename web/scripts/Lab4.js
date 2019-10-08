@@ -18,19 +18,34 @@ var Lab4 = ( function() {
 
             // INSERT YOUR CODE HERE
             
-            var output = "<p>";
-            var ratelist = rates["rates"];
+            var inputAsString = document.getElementById("input").value; 
             
-            var input = document.getElementById("input");
+            var HTML = "";
             
-            for(var i = 0; i < ratelist.length; ++i){
+            var data = rates["rates"];
+            
+            
+            
+            
+            if (!isNaN(inputAsString)){
+                if (inputAsString.length > 0){
                 
-                var solution = rates[i] * input;
-                
-                
-                output.innerHTML = (rates[i] + " " + solution);
-                output.appendChild(output);
+                    var input = parseInt(inputAsString); 
+                    if(input > 0) {
+                        for(rate in data) {
+
+                            var convertedInput = input * data[rate];
+                            HTML += "<p>" + rate + ":" + convertedInput.toFixed(2) + "</p>";                        
+
+                        }
+                        HTML += "<p>Using exchange rates from " + rates["date"] + "</p>";
+
+                        $('#output').html(HTML);
+                    }
+                }
             }
+        
+
 
         },
         

@@ -116,16 +116,14 @@ public class Rates {
              *
              * *** INSERT YOUR CODE HERE ***
              */
-            row = iterator.next();
-            while(iterator.hasNext()){
+            while( iterator.hasNext()) {
                 row = iterator.next();
-                String code = row[1];
-                double r = Double.parseDouble(row[2]);
-                rates.put(code,r);
-                
+                rates.put(row[1], Double.parseDouble(row[2]));
             }
             
             json.put("rates", rates);
+            json.put("base", "USD");
+            json.put("date", "2019-09-20");
             /* Parse top-level container to a JSON string */
             
             results = JSONValue.toJSONString(json);
